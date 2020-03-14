@@ -28,7 +28,7 @@ function classificaImc(imc = 18.5){
     return tipoImc;
 }
 
-function exibeImc(pacientes = new Array){
+function exibeImc(pacientes = new Array()){
     for(let n = 0; n<= 4; n++){
         pacientes.push(document.querySelector(".paciente" + String(n)));
         let peso = Number(pacientes[n].querySelector(".info-peso").textContent);;
