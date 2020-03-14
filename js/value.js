@@ -2,7 +2,7 @@
 var pacientes = [];
 
 function calculaImc(peso, altura){
-    return parseInt(peso/(altura**2));
+    return ((peso/(altura**2)).toFixed(2));
 }
 
 function exibeImc(pacientes){
