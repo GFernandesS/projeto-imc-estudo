@@ -1,16 +1,37 @@
-
 var pacientes = [];
 
-function calculaImc(peso, altura){
+function calculaImc(peso = 0, altura = 0){
     return ((peso/(altura**2)).toFixed(2));
 }
 
-function exibeImc(pacientes){
+function classificaImc(imc = 18.5){
+    let tipoImc;
+    if(imc < 18.5){
+        tipoImc = "Abaixo do Peso";
+    }
+    else if(imc >= 18.5 && imc <= 24.9){
+        tipoImc = "Peso Normal";
+    }
+    else if(imc >= 25 && imc <= 29.9){
+        tipoImc = "Sobrepeso";
+    }
+    else if(imc >= 30 && imc <= 39.9){
+        tipoImc = "Obesidade";
+    }
+    else{
+        tipoImc = "Obesidade Mórbida";
+    }
+    return tipoImc;
+}
+
+function exibeImc(pacientes = new Array){
     for(let n = 0; n<= 4; n++){
         pacientes.push(document.querySelector(".paciente" + String(n)));
         let peso = Number(pacientes[n].querySelector(".info-peso").textContent);;
         let altura = Number(pacientes[n].querySelector(".info-altura").textContent);
-        pacientes[n].querySelector(".info-imc").textContent = calculaImc(peso, altura);
+        let imc = calculaImc(peso, altura);
+        pacientes[n].querySelector(".info-imc").textContent = imc;
+        pacientes[n].querySelector(".info-classificacao").textContent = classificaImc(imc);
     }
 }
 
