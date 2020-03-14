@@ -1,6 +1,10 @@
 var pacientes = [];
 
 function calculaImc(peso = 0, altura = 0){
+    if(peso > 200 || peso < 0 || altura > 2.40 || altura < 0){
+        window.alert("Informações inválidas foram inseridas");
+        return 0;
+    }
     return ((peso/(altura**2)).toFixed(2));
 }
 
