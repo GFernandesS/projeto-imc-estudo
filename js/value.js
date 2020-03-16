@@ -29,13 +29,13 @@ function classificaImc(imc = 18.5){
 }
 
 function exibeImc(){
-    for(let n = 0; n<= pacientes.length; n++){
-        let peso = Number(pacientes[n].querySelector(".info-peso").textContent);;
-        let altura = Number(pacientes[n].querySelector(".info-altura").textContent);
+    pacientes.forEach(paciente => {
+        let peso = Number(paciente.querySelector(".info-peso").textContent);;
+        let altura = Number(paciente.querySelector(".info-altura").textContent);
         let imc = calculaImc(peso, altura);
-        pacientes[n].querySelector(".info-imc").textContent = imc;
-        pacientes[n].querySelector(".info-classificacao").textContent = classificaImc(imc);
-    }
+        paciente.querySelector(".info-imc").textContent = imc;
+        paciente.querySelector(".info-classificacao").textContent = classificaImc(imc);
+    })
 }
 
 exibeImc(pacientes)
