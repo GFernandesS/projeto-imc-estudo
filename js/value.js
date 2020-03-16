@@ -1,4 +1,4 @@
-var pacientes = [];
+var pacientes = Array.from(document.querySelectorAll(".paciente"));
 
 function calculaImc(peso = 0, altura = 0){
     if(peso > 200 || peso < 0 || altura > 2.40 || altura < 0){
@@ -28,9 +28,8 @@ function classificaImc(imc = 18.5){
     return tipoImc;
 }
 
-function exibeImc(pacientes = new Array()){
-    for(let n = 0; n<= 4; n++){
-        pacientes.push(document.querySelector(".paciente" + String(n)));
+function exibeImc(){
+    for(let n = 0; n<= pacientes.length; n++){
         let peso = Number(pacientes[n].querySelector(".info-peso").textContent);;
         let altura = Number(pacientes[n].querySelector(".info-altura").textContent);
         let imc = calculaImc(peso, altura);
@@ -40,3 +39,4 @@ function exibeImc(pacientes = new Array()){
 }
 
 exibeImc(pacientes)
+
