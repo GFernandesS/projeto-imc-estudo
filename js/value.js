@@ -10,6 +10,7 @@ function calculaImc(peso = 0, altura = 0){
 
 function classificaImc(imc = 18.5){
     let tipoImc;
+    let background;
     if(imc < 18.5){
         tipoImc = "Abaixo do Peso";
     }
@@ -21,11 +22,16 @@ function classificaImc(imc = 18.5){
     }
     else if(imc >= 30 && imc <= 39.9){
         tipoImc = "Obesidade";
+        background = "paciente-obeso"
     }
     else{
         tipoImc = "Obesidade Mórbida";
+        background = "paciente-obeso";
     }
-    return tipoImc;
+    return{
+        tipoImc,
+        background
+    }
 }
 
 function exibeImc(){
@@ -34,7 +40,9 @@ function exibeImc(){
         let altura = Number(paciente.querySelector(".info-altura").textContent);
         let imc = calculaImc(peso, altura);
         paciente.querySelector(".info-imc").textContent = imc;
-        paciente.querySelector(".info-classificacao").textContent = classificaImc(imc);
+        paciente.querySelector(".info-classificacao").textContent = classificaImc(imc).tipoImc;
+        paciente.classList.add(classificaImc(imc).background);
+        
     })
 }
 
