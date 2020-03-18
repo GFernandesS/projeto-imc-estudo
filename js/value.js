@@ -42,7 +42,7 @@ function exibeImc(){
         paciente.querySelector(".info-imc").textContent = imc;
         paciente.querySelector(".info-classificacao").textContent = classificaImc(imc).tipoImc;
         paciente.classList.add(classificaImc(imc).background);
-        
+
     })
 }
 
