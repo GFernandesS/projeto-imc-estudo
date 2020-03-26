@@ -62,39 +62,44 @@ function exibeImc(){
     })
 }
 
-
 function adicionaPaciente(novoPaciente, linhaPaciente){
-    if(validaDados(novoPaciente.altura.value, novoPaciente.peso.value)){
-    let tdNome = document.createElement("td");
-    tdNome.setAttribute("class", "info-nome");
-    tdNome.textContent = novoPaciente.nome.value; //Acessa nome a partir do name definido 
-    linhaPaciente.appendChild(tdNome);
+    let objectNovoPaciente = {
+        nome: novoPaciente.nome.value,
+        peso: novoPaciente.peso.value,
+        altura: novoPaciente.altura.value,
+        gordura: novoPaciente.gordura.value
+    };
+    if(validaDados(objectNovoPaciente.altura, n)){
+        let tdNome = document.createElement("td");
+        tdNome.setAttribute("class", "info-nome");
+        tdNome.textContent = objectNovoPaciente.nome; //Acessa nome a partir do name definido 
+        linhaPaciente.appendChild(tdNome);
 
-    let tdPeso = document.createElement("td");
-    tdPeso.setAttribute("class", "info-peso");
-    tdPeso.textContent = novoPaciente.peso.value; 
-    linhaPaciente.appendChild(tdPeso);
+        let tdPeso = document.createElement("td");
+        tdPeso.setAttribute("class", "info-peso");
+        tdPeso.textContent = objectNovoPaciente.peso; 
+        linhaPaciente.appendChild(tdPeso);
 
-    let tdAltura = document.createElement("td");
-    tdAltura.setAttribute("class", "info-altura");
-    tdAltura.textContent = novoPaciente.altura.value;
-    linhaPaciente.appendChild(tdAltura);
+        let tdAltura = document.createElement("td");
+        tdAltura.setAttribute("class", "info-altura");
+        tdAltura.textContent = objectNovoPaciente.altura;
+        linhaPaciente.appendChild(tdAltura);
 
-    let tdGordura = document.createElement("td");
-    tdGordura.setAttribute("class", "info-gordura");
-    tdGordura.textContent = novoPaciente.gordura.value;
-    linhaPaciente.appendChild(tdGordura);
+        let tdGordura = document.createElement("td");
+        tdGordura.setAttribute("class", "info-gordura");
+        tdGordura.textContent = objectNovoPaciente.gordura;
+        linhaPaciente.appendChild(tdGordura);
 
-    let tdImc = document.createElement("td");
-    tdImc.setAttribute("class", "info-imc");
-    linhaPaciente.appendChild(tdImc);
+        let tdImc = document.createElement("td");
+        tdImc.setAttribute("class", "info-imc");
+        linhaPaciente.appendChild(tdImc);
 
-    let tdClassificacao = document.createElement("td");
-    tdClassificacao.setAttribute("class", "info-classificacao");
-    linhaPaciente.appendChild(tdClassificacao);
+        let tdClassificacao = document.createElement("td");
+        tdClassificacao.setAttribute("class", "info-classificacao");
+        linhaPaciente.appendChild(tdClassificacao);
 
-    pacientes = Array.from(document.querySelectorAll(".paciente"));
-    exibeImc();
+        pacientes = Array.from(document.querySelectorAll(".paciente"));
+        exibeImc();
     }
 }
 

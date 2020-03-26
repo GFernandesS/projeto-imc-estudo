@@ -1,0 +1,59 @@
+[33mcommit f6ecc496c3bd0929f39696d00e608bf1b771be11[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Wed Mar 18 13:20:56 2020 -0300
+
+    Corringido problemas
+
+[33mcommit 569eb521883c21c68c93c16738f74238cb17899e[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Wed Mar 18 12:43:18 2020 -0300
+
+    Adicionando cor aos pacientes obesos
+
+[33mcommit 24b22cbc1e26b10a048b284657b14f58d7aac10c[m[33m ([m[1;32mforeach[m[33m)[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Mon Mar 16 16:07:24 2020 -0300
+
+    Trocando for por foreach e tornando mais elegante
+
+[33mcommit b108d3040751a3870781c0d89b802dc28348e636[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Mon Mar 16 15:59:26 2020 -0300
+
+    Melhorando a definição do array de pacientes
+
+[33mcommit aa390b5a18707d04ec2017c193db8f6d2c4cc597[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 13:25:31 2020 -0300
+
+    Correção da função exibeImc
+
+[33mcommit da11384f20cdb37c0eb1697a32bad728785be6ba[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 13:22:12 2020 -0300
+
+    Persistência de dados com a altura e peso
+
+[33mcommit ddd08bba4ecca6729177a9d2b405084675209171[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 13:09:13 2020 -0300
+
+    Adição da coluna de classificação e desenvolvimento de uma função que a classifica
+
+[33mcommit 284269654f885537ec67cbb95196e96ef586b1e0[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 12:54:50 2020 -0300
+
+    Alterando a quantidade de casas decimais do IMC
+
+[33mcommit d2721d238832216df2e47b4b66ed8b63156da5be[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 12:50:32 2020 -0300
+
+    Atribuindo a função a exibição do IMC
+
+[33mcommit 2a46e8b26a756ed6be6c2f6d80eef49be15b91ad[m
+Author: guisao666 <guilherme-schiavone@hotmail.com>
+Date:   Sat Mar 14 12:34:05 2020 -0300
+
+    Construção do HTML e cálculo do IMC
