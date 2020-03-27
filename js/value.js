@@ -63,44 +63,33 @@ function exibeImc(){
 }
 
 function adicionaPaciente(novoPaciente, linhaPaciente){
-    let objectNovoPaciente = {
+    objectNovoPaciente = {
         nome: novoPaciente.nome.value,
         peso: novoPaciente.peso.value,
         altura: novoPaciente.altura.value,
-        gordura: novoPaciente.gordura.value
+        gordura: novoPaciente.gordura.value,
+        imc: undefined,
+        classificacao: undefined
     };
-    if(validaDados(objectNovoPaciente.altura, n)){
-        let tdNome = document.createElement("td");
-        tdNome.setAttribute("class", "info-nome");
-        tdNome.textContent = objectNovoPaciente.nome; //Acessa nome a partir do name definido 
-        linhaPaciente.appendChild(tdNome);
-
-        let tdPeso = document.createElement("td");
-        tdPeso.setAttribute("class", "info-peso");
-        tdPeso.textContent = objectNovoPaciente.peso; 
-        linhaPaciente.appendChild(tdPeso);
-
-        let tdAltura = document.createElement("td");
-        tdAltura.setAttribute("class", "info-altura");
-        tdAltura.textContent = objectNovoPaciente.altura;
-        linhaPaciente.appendChild(tdAltura);
-
-        let tdGordura = document.createElement("td");
-        tdGordura.setAttribute("class", "info-gordura");
-        tdGordura.textContent = objectNovoPaciente.gordura;
-        linhaPaciente.appendChild(tdGordura);
-
-        let tdImc = document.createElement("td");
-        tdImc.setAttribute("class", "info-imc");
-        linhaPaciente.appendChild(tdImc);
-
-        let tdClassificacao = document.createElement("td");
-        tdClassificacao.setAttribute("class", "info-classificacao");
-        linhaPaciente.appendChild(tdClassificacao);
-
+    if(validaDados(objectNovoPaciente.altura, objectNovoPaciente.peso)){
+       for(let atr in objectNovoPaciente){
+            montaColuna(`info-${atr}`, objectNovoPaciente[atr], linhaPaciente);
+       }
         pacientes = Array.from(document.querySelectorAll(".paciente"));
         exibeImc();
     }
+}
+
+
+function montaColuna(classe, conteudo, linhaPaciente){
+    console.log("Função: " + conteudo)
+    let td = document.createElement("td");
+    td.setAttribute("class", classe);
+    if(typeof conteudo != "undefined"){
+    td.textContent = conteudo;
+    }
+
+    linhaPaciente.appendChild(td);
 }
 
 var validaDados = (altura, peso) => {
