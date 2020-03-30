@@ -10,7 +10,7 @@ btnAdicionarPaciente.addEventListener("click", function(event){
     document.querySelector("#tabela-pacientes").appendChild(linhaPaciente);
 
     adicionaPaciente(novoPaciente, linhaPaciente);
-   
+    novoPaciente.reset();
 });
 
 
@@ -94,7 +94,9 @@ function montaColuna(classe, conteudo, linhaPaciente){
 
 var validaDados = (altura, peso) => {
     if(peso > 200 || peso <= 0 ||  altura > 2.40 || altura <= 0){
-        window.alert("Não pode inserir dados inválidos para um paciente");
+        let erroForm = document.querySelector(".erroForm");
+        erroForm.innerHTML = "Não pode inserir pacientes com peso inválido";
+        erroForm.classList.add("erroForm");
         return false;
     }
     return true;
