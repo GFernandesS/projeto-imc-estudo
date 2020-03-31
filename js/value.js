@@ -86,7 +86,7 @@ function montaColuna(classe, conteudo, linhaPaciente){
     let td = document.createElement("td");
     td.setAttribute("class", classe);
     if(typeof conteudo != "undefined"){
-    td.textContent = conteudo;
+        td.textContent = conteudo;
     }
 
     linhaPaciente.appendChild(td);
@@ -94,12 +94,16 @@ function montaColuna(classe, conteudo, linhaPaciente){
 
 var validaDados = (altura, peso) => {
     if(peso > 200 || peso <= 0 ||  altura > 2.40 || altura <= 0){
-        let erroForm = document.querySelector(".erroForm");
-        erroForm.innerHTML = "Não pode inserir pacientes com peso inválido";
-        erroForm.classList.add("erroForm");
+        let tagErro = document.querySelector(".erroForm");
+        tagErro.innerHTML =  exibeMensagemErroPaciente()
         return false;
     }
     return true;
+}
+
+var exibeMensagemErroPaciente = () => {
+   return "Não pode inserir dados inválidos para um paciente";
+    
 }
 
 
