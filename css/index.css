@@ -141,3 +141,7 @@ button[disabled=disabled], button:disabled {
 	color: red;
 	font-weight: bold;
 }
+
+.cursor{
+	cursor:crosshair;
+}

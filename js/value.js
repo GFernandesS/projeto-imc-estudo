@@ -1,5 +1,6 @@
 var pacientes = Array.from(document.querySelectorAll(".paciente"));
 var btnAdicionarPaciente = document.querySelector("#adicionar-paciente");
+var tagErro = document.querySelector(".erroForm");
 
 btnAdicionarPaciente.addEventListener("click", function(event){
     event.preventDefault();
@@ -16,7 +17,7 @@ btnAdicionarPaciente.addEventListener("click", function(event){
 
 function calculaImc(peso = 0, altura = 0){
     if(!validaDados(altura, peso)){
-        window.alert("Informações inválidas foram inseridas");
+        window.alert(exibeMensagemErroPaciente());
         return 0;
     }
     console.log(altura, peso)
@@ -71,12 +72,19 @@ function adicionaPaciente(novoPaciente, linhaPaciente){
         imc: undefined,
         classificacao: undefined
     };
-    if(validaDados(objectNovoPaciente.altura, objectNovoPaciente.peso)){
+    if(validaDadosNovoPaciente(
+        objectNovoPaciente.altura, 
+        objectNovoPaciente.peso, 
+        objectNovoPaciente.nome, 
+        objectNovoPaciente.gordura
+    )){
        for(let atr in objectNovoPaciente){
             montaColuna(`info-${atr}`, objectNovoPaciente[atr], linhaPaciente);
        }
+       console.log("Sucesso");
         pacientes = Array.from(document.querySelectorAll(".paciente"));
         exibeImc();
+        tagErro.innerHTML = "";
     }
 }
 
@@ -94,18 +102,28 @@ function montaColuna(classe, conteudo, linhaPaciente){
 
 var validaDados = (altura, peso) => {
     if(peso > 200 || peso <= 0 ||  altura > 2.40 || altura <= 0){
-        let tagErro = document.querySelector(".erroForm");
-        tagErro.innerHTML =  exibeMensagemErroPaciente()
+       exibeMensagemErroPaciente("Existem valores inválidos em algum(s) paciente(s)");
+       console.log("Entrou aqui 2");
         return false;
     }
     return true;
 }
 
-var exibeMensagemErroPaciente = () => {
-   return "Não pode inserir dados inválidos para um paciente";
+
+var exibeMensagemErroPaciente = (mensagem) => {
+    tagErro.innerHTML =  mensagem;
     
 }
 
+function validaDadosNovoPaciente(altura, peso, nome, gordura){
+    if(!validaDados(altura, peso) || typeof nome == "undefined" || typeof gordura == "undefined"){
+        console.log("Entrou aqui 1")
+        exibeMensagemErroPaciente("Não pode inserir pacientes com dados inválidos");
+        return false;
+    }
+    return true;
+    
+}
 
 
 exibeImc();
