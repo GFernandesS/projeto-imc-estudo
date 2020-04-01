@@ -96,7 +96,6 @@ function montaColuna(classe, conteudo, linhaPaciente){
     if(typeof conteudo != "undefined"){
         td.textContent = conteudo;
     }
-
     linhaPaciente.appendChild(td);
 }
 

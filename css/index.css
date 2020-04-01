@@ -145,3 +145,15 @@ button[disabled=disabled], button:disabled {
 .cursor{
 	cursor:crosshair;
 }
+
+.fadeOut{
+	padding-left: 50%;
+	opacity: 0%;
+	transition: 0.5s ease;
+}
+
+.fadeIn{
+	opacity:100%;
+	transition:0.5s ease;
+}
+
