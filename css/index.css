@@ -157,3 +157,17 @@ button[disabled=disabled], button:disabled {
 	transition:0.5s ease;
 }
 
+.campo-busca{
+	border-radius:5px;
+	height: 30px;
+	width: 200px;
+	border: 1px solid black;
+	text-align: center;
+	margin-bottom: 15px;
+	box-shadow: 3px 3px 0px 0px black;
+}
+
+.invisivel{
+	display: none;
+}
+

@@ -16,7 +16,10 @@
 		</header>
 		<main>
 			<section class="container">
+
 				<h2>Meus pacientes</h2>
+				<label for="campo-busca">Filtre: </label>
+				<input type="text" class="campo-busca" name="campo-busca" id="campo-busca" placeholder="Digite os parâmetros de busca"/>
 				<table>
 					<thead>
 						<tr>
@@ -74,6 +77,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<button id="sincronizar-paciente" class="botao bto-principal">Sincronizar Pacientes</button>
 			</section>
 			<section class="container" style="margin-top: 20px;">
 				<h2 id="titulo-form">Adicionar novo paciente</h2>
@@ -104,4 +108,6 @@
 	</body>
 	<script type="text/javascript" src="js/value.js"></script>
 	<script type="text/javascript" src="js/remove-paciente.js"></script>
+	<script type="text/javascript" src="js/filtrar-paciente.js"></script>
+	<script type="text/javascript" src="js/sincronizar-paciente.js"></script>
 </html>
